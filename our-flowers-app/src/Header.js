@@ -15,19 +15,23 @@ import UserProfile from './UserProfile';
   import _ from 'lodash';
   import './index.css'; //import css file!
 
-export default function Header() {
-  return (
-    <Router>
-        <div className="container">
-                <Link to="/">Home</Link>
-                {' - '}
-                <Link to="/search">Search</Link>
-                {' - '}
-                <Link to="/about">About</Link>
-            <Route exact path="/" component={Gallery} />
-            <Route path="/search" component={Search} />
-            <Route path="/about" component={About} />
-        </div>
-    </Router>
-  );
-}
+  export default function Header() {
+    return (
+      <div className="container">
+        <nav
+          style={{
+            borderBottom: "solid 1px",
+            paddingBottom: "1rem",
+          }}
+        >
+          <Link to="/">Home</Link>
+          {' - '}
+          <Link to="/search">Search</Link>
+          {' - '}
+          <Link to="/about">About</Link>
+          {' - '}
+          <Link to="/userprofile"> User Profile</Link>
+        </nav>
+      </div>
+    );
+  }

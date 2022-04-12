@@ -14,27 +14,12 @@ import About from './About';
 import { Route, Link } from "react-router-dom";
 import _ from 'lodash';
 import './index.css'; //import css file!
+import Header from './Header';
 
-export default function Header() {
+export default function App() {
   return (
     <div className="container">
-      {/* <Route exact path="/" component={Gallery} />
-          <Route path="/search" component={Search} />
-          <Route path="/about" component={About} /> */}
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/">Home</Link>
-        {' - '}
-        <Link to="/search">Search</Link>
-        {' - '}
-        <Link to="/about">About</Link>
-        {' - '}
-        <Link to="/userprofile"> User Profile</Link>
-      </nav>
+      <Header />
     </div>
   );
 }
