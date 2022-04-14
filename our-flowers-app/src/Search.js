@@ -1,14 +1,27 @@
 import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { Component } from 'react';
-
-function Hello() { 
-    return <h1> Hi Hi testing <IoIosSearch /></h1>;
-}
+const tagValues = [
+    {id: 1, name: 'big nose'},
+    {id: 2, name: 'bushy eyebrows'},
+    {id: 3, name: 'gapped teeth'},
+    {id: 4, name: 'heterochromia'},
+    {id: 5, name: 'hairy arms'}
+];
 
 function PillFilter() { 
     return ( 
-        <button class ="pill">Hello</button>
+        <div>
+            <p style={{color: 'white'}}>Suggested Tags:</p>
+                <ul>
+                    {tagValues.map((tag)=>(
+                        <button className ="pill" key={tag.id}>{tag.name}</button>
+                    ))}
+                
+                </ul>
+            
+        </div>
+        
     )
 }
 function SearchBar() { 
@@ -19,7 +32,7 @@ function SearchBar() {
         <input
             type="text"
             id="header-search"
-            placeholder="Search"
+            placeholder="search"
             name="s" 
         />
         <button type="submit">Cancel</button>
@@ -34,7 +47,7 @@ export default function Search() {
         <div>
           
             <SearchBar/>
-            <h1 style={{ color: "#9CAEA9" }}>Test</h1>
+       
             <PillFilter />
             
         </div>

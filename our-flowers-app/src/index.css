@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
 }
 
 code {
@@ -23,4 +24,22 @@ code {
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 16px;
+}
+.pill:hover { 
+  background-color: white;
+}
+
+input { 
+  background-color: rgba(216, 216, 216, 0.82);;
+  opacity: 100%;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+
+}
+
+form { 
+  margin-top: 0.5em;
+  margin-left: 0.5em;
 }
