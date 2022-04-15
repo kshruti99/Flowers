@@ -43,14 +43,15 @@ input {
 
 form { 
   margin-top: 2em;
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 
 p.sugg { 
   margin-top: 0.5em;
-  margin-left: 0.5em;
+  margin-left: 1em;
 }
 
 ul { 
+  margin-top: 0.5em;
   padding-inline-start: 20px;
 }
