@@ -42,14 +42,14 @@ function SearchBar() {
     return(
         <form action="/" method="get">
         
-        <button type="submit"> <IoIosSearch/></button>
+       
         <input
             type="text"
             id="header-search"
             placeholder="search"
             name="s" 
         />
-        <button type="submit">Cancel</button>
+        <button type="submit" id='cancel-button'>cancel</button>
         
     </form>
     )
