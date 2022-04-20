@@ -1,13 +1,77 @@
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Sen', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #121212;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.pill { 
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Sen', sans-serif;
+}
+.pill:hover { 
+  background-color: white;
+}
+
+input { 
+  background-color: rgba(196, 196, 196, 0.5);;
+  opacity: 100%;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  font-family: 'Sen', sans-serif;
+  width: 65%;
+
+}
+
+::placeholder { 
+  color:white
+}
+form { 
+  margin-top: 2em;
+  margin-left: 1em;
+  border: none;
+  
+}
+
+p.sugg { 
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+ul { 
+  margin-top: 0.5em;
+  padding-inline-start: 20px;
+}
+
+#cancel-button {
+  background-color: #121212;
+  border: none;
+  color: white;
+  padding: none;
+  text-align: left;
+  text-decoration: none;
+  display: inline-flex;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+  font-family: 'Sen', sans-serif;
 }
