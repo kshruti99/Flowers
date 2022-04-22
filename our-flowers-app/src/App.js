@@ -27,7 +27,7 @@ export default function Header() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/">Home</Link>
+        <Link to="/gallery">Home</Link>
         {' - '}
         <Link to="/search">Search</Link>
         {' - '}
