@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*gallery styling*/
+
+.img {
+  border-radius: 20px;
+  max-width: 100%;
+  height: 245px;
+  width: 200px;
+  margin: 4px;
+
+}
+
+.img-alt{
+  border-radius: 15px;
+  max-width: 100%;
+  height: 290px;
+  width: 200px;
+  margin: 10px;
+}
