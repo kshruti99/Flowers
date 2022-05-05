@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #121212;
-  
 }
 
 code {
@@ -49,6 +48,24 @@ code {
   background-color: white;
 }
 
+.smallpill { 
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Sen', sans-serif;
+  font-size: xx-small;
+}
+.smallpill:hover { 
+  background-color: white;
+}
+
 input { 
   background-color: rgba(196, 196, 196, 0.5);;
   opacity: 100%;
@@ -58,7 +75,6 @@ input {
   display: inline-block;
   font-family: 'Sen', sans-serif;
   width: 65%;
-
 }
 
 ::placeholder { 

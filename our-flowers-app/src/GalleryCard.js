@@ -22,7 +22,7 @@ function GalleryCard(props) {
         <img className="card-img-top" src={props.gal.path} alt={props.gal.imgalt} />
         <div className="card-body">
             {props.gal.tagid.map((currTag, j) =>
-                <button key={j} className ="pill">{tagValues[currTag - 1].name}</button>
+                <button key={j} className ="smallpill">{tagValues[currTag - 1].name}</button>
             )}
         </div>
       </div>

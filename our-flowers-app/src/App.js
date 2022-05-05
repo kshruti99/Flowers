@@ -1,27 +1,26 @@
 import React from 'react';
-// import { LinkContainer } from 'react-router-bootstrap';
-
-// import Container from 'react-bootstrap/Container';
-// import Nav from 'react-bootstrap/Nav';
 import Gallery from './Gallery';
 import Search from './Search.js';
 import About from './About';
-// import UserProfile from './UserProfile';
-
-//   import React, { Component } from 'react';
-// import ReactDOM, { render } from 'react-dom';
-// import App from './App';
-import { Route, Link } from "react-router-dom";
+import UserProfile from './UserProfile';
+import { Link } from "react-router-dom";
+import {
+  Navbar,
+  NavItem,
+  NavbarToggler,
+  Collapse,
+  NavLink,
+  Nav,
+  NavbarBrand
+} from 'reactstrap';
 import _ from 'lodash';
+import "bootstrap/dist/css/bootstrap.css";
 import './index.css'; //import css file!
 
 export default function Header() {
   return (
     <div className="container">
-      {/* <Route exact path="/" component={Gallery} />
-          <Route path="/search" component={Search} />
-          <Route path="/about" component={About} /> */}
-      <nav
+      {/* <nav
         style={{
           borderBottom: "solid 1px",
           paddingBottom: "1rem",
@@ -34,7 +33,25 @@ export default function Header() {
         <Link to="/about">About</Link>
         {' - '}
         <Link to="/userprofile"> User Profile</Link>
-      </nav>
+      </nav> */}  
+          <Navbar color="light" light expand="md">
+                <NavbarBrand href="/">Jasmine</NavbarBrand>
+                    <Nav className="mr-auto" navbar>
+                        <NavItem>
+                            <NavLink href="/gallery">Home</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/search">Search</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/about">About</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/userprofile">Profile</NavLink>
+                        </NavItem>
+                    </Nav>
+            </Navbar>
+      <Gallery/>
     </div>
   );
 }

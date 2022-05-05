@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
 import galleryObject from './galleryObjects.json';
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Container, Row, Col } from 'reactstrap';
 import GalleryCard from './GalleryCard';
 
 export default function Gallery() {
@@ -26,11 +26,11 @@ export default function Gallery() {
             <h3 style={{ color: "#A2D7D7" }}>Feed</h3>
             <Container>
                 <Row>
+                {galleryObject.map((gal, i) =>
                     <Col>
-                        {galleryObject.map((gal, i) =>
-                            <GalleryCard key={gal.galid} gal={gal} />
-                        )}
+                        <GalleryCard key={gal.galid} gal={gal} />
                     </Col>
+                )}
                 </Row>
             </Container>
         </div>
