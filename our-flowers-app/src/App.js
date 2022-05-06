@@ -20,20 +20,6 @@ import './index.css'; //import css file!
 export default function Header() {
   return (
     <div className="container">
-      {/* <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/gallery">Home</Link>
-        {' - '}
-        <Link to="/search">Search</Link>
-        {' - '}
-        <Link to="/about">About</Link>
-        {' - '}
-        <Link to="/userprofile"> User Profile</Link>
-      </nav> */}  
           <Navbar color="light" light expand="md">
                 <NavbarBrand href="/">Jasmine</NavbarBrand>
                     <Nav className="mr-auto" navbar>

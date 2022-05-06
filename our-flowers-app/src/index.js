@@ -7,6 +7,7 @@ import Gallery from './Gallery';
 import Search from './Search.js';
 import About from './About';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import UserProfile from './UserProfile';
 
 
 
@@ -18,6 +19,7 @@ ReactDOM.render(
                 <Route path="gallery" element={<Gallery />} />
                 <Route path="about" element={<About />} />
                 <Route path="search" element={<Search />} />
+                <Route path="userprofile" element={<UserProfile />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>,

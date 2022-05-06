@@ -66,6 +66,20 @@ code {
   background-color: white;
 }
 
+.imgsize {
+  max-height: 200px;
+  max-width: 200px;
+  align-items: center;
+}
+
+.card {
+  align-items: center;
+}
+
+.card-img-top {
+  align-items: center;
+}
+
 input { 
   background-color: rgba(196, 196, 196, 0.5);;
   opacity: 100%;
