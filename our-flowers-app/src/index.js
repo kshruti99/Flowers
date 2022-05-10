@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Gallery from './Gallery';
 import Search from './Search.js';
 import About from './About';
+import Header from './Header';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserProfile from './UserProfile';
 
@@ -13,6 +14,7 @@ import UserProfile from './UserProfile';
 
 ReactDOM.render(
     <React.StrictMode>
+        <Header/>
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />

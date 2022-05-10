@@ -40,6 +40,7 @@ export default function UserProfile() {
     };
 
     const takePhoto = () => {
+        //edit href here to download to img folder? then upload to firebase here too
         let photo = photoRef.current;
         let strip = stripRef.current;
 
@@ -76,7 +77,7 @@ export default function UserProfile() {
                         {/* onClick={videoRef} */}
                         Upload a Picture
                     </Button>
-                    <video ref={videoRef} />
+                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
                     <canvas ref={photoRef} />
                     <div>
                         <div ref={stripRef} />
