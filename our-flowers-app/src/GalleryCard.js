@@ -18,7 +18,7 @@ function GalleryCard(props) {
     ];
     //render individual card for one gallery image
     return (    
-      <div key={props.gal.galid} className="card">
+      <div key={props.gal.galid} className="card" className="card-columns">
         <img className="card-img-top" src={props.gal.path} alt={props.gal.imgalt} />
         <div className="card-body">
             {props.gal.tagid.map((currTag, j) =>

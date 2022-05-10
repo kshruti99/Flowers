@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+.body-color{
+  background-color: #121212;
+}
+
+.nav-bar-color{
+  background-color: #121212;
+}
+
 /*gallery styling*/
 
 .img {
