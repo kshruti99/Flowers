@@ -1,16 +1,7 @@
 import React from 'react';
-// import { LinkContainer } from 'react-router-bootstrap';
-
-import Container from 'react-bootstrap/Container';
-import Gallery from './Gallery';
-import Search from './Search';
-import About from './About';
-import UserProfile from './UserProfile';
-
-//   import React, { Component } from 'react';
-  import ReactDOM, { render } from 'react-dom';
-  import _ from 'lodash';
-  import {
+import ReactDOM, { render } from 'react-dom';
+import _ from 'lodash';
+import {
     Navbar,
     NavItem,
     NavbarToggler,
@@ -18,8 +9,8 @@ import UserProfile from './UserProfile';
     NavLink,
     Nav,
     NavbarBrand
-  } from 'reactstrap';
-  import './index.css'; //import css file!
+} from 'reactstrap';
+import './index.css'; //import css file!
 
 export default function Header() {
   return (
