@@ -1,0 +1,122 @@
+[
+    {
+        "galid": 1,
+        "path": "/img/1.png",
+        "imgalt": "Img.1",
+        "tagid": [11, 8, 10]
+    },
+    {
+        "galid": 2,
+        "path": "/img/2.png",
+        "imgalt": "Img.2",
+        "tagid": [11, 3]
+    },
+    {
+        "galid": 3,
+        "path": "/img/3.png",
+        "imgalt": "Img.3",
+        "tagid": [11]
+    },
+    {
+        "galid": 4,
+        "path": "/img/4.png",
+        "imgalt": "Img.4",
+        "tagid": [11]
+    },
+    {
+        "galid": 5,
+        "path": "/img/5.png",
+        "imgalt": "Img.5",
+        "tagid": [3, 11]
+    },
+    {
+        "galid": 6,
+        "path": "/img/6.png",
+        "imgalt": "Img.6",
+        "tagid": [11]
+    },
+    {
+        "galid": 7,
+        "path": "/img/7.png",
+        "imgalt": "Img.7",
+        "tagid": [1, 2, 3]
+    },
+    {
+        "galid": 8,
+        "path": "/img/8.png",
+        "imgalt": "Img.8",
+        "tagid": [4, 6]
+    },
+    {
+        "galid": 9,
+        "path": "/img/9.png",
+        "imgalt": "Img.9",
+        "tagid": [5, 7]
+    },
+    {
+        "galid": 10,
+        "path": "/img/10.png",
+        "imgalt": "Img.10",
+        "tagid": [5]
+    },
+    {
+        "galid": 11,
+        "path": "/img/11.png",
+        "imgalt": "Img.11",
+        "tagid": [10]
+    },
+    {
+        "galid": 12,
+        "path": "/img/12.png",
+        "imgalt": "Img.12",
+        "tagid": [10, 4, 1]
+    },
+    {
+        "galid": 13,
+        "path": "/img/13.png",
+        "imgalt": "Img.13",
+        "tagid": [11]
+    },
+    {
+        "galid": 14,
+        "path": "/img/14.png",
+        "imgalt": "Img.14",
+        "tagid": [11]
+    },
+    {
+        "galid": 15,
+        "path": "/img/15.png",
+        "imgalt": "Img.15",
+        "tagid": [11]
+    },
+    {
+        "galid": 16,
+        "path": "/img/16.png",
+        "imgalt": "Img.16",
+        "tagid": [11]
+    },
+    {
+        "galid": 17,
+        "path": "/img/17.png",
+        "imgalt": "Img.17",
+        "tagid": [11]
+    },
+    {
+        "galid": 18,
+        "path": "/img/18.png",
+        "imgalt": "Img.18",
+        "tagid": [11]
+    },
+    {
+        "galid": 19,
+        "path": "/img/19.png",
+        "imgalt": "Img.19",
+        "tagid": [11]
+    },
+    {
+        "galid": 20,
+        "path": "/img/20.png",
+        "imgalt": "Img.20",
+        "tagid": [11]
+    }
+]
