@@ -132,3 +132,185 @@ ul {
   border-radius: 16px;
   font-family: 'Sen', sans-serif;
 }
+
+/*landing page styling hereeee*/
+body{
+  background-color: #121212;
+  
+}
+nav { 
+  font-size: 1rem;
+  text-align: center;
+  display: none;
+}
+
+nav li { 
+  display: inline;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family:  'PT Serif', serif;
+  color:#D7D2CF;
+  
+}
+
+#page-title { 
+  margin-top: 2em;
+  margin-left: 1.5em;
+  margin-bottom: 3em;
+  
+}
+
+.row .title { 
+  margin-bottom: 0.5em;
+}
+.title{
+  font-family: 'Sen', sans-serif;
+  color: #D7D2CF;
+  font-size: 4em;
+}
+p { 
+  font-family:  'PT Serif', serif;
+  color:#D7D2CF;
+}
+
+img { 
+  max-width: 75%;
+  margin-top: 15px;
+}
+
+#subtitle { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-left: 1em;
+}
+
+.flex-container { 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 0.5em;
+  
+}
+
+.context-title { 
+  font-family: 'Sen', sans-serif;
+  color: #D7D2CF;
+  
+}
+
+#team { 
+  margin-left: 0.5em;
+}
+
+.column { 
+  padding:10%
+}
+.member-card   {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-left: 0.5em;
+}
+.context-item { 
+  font-family: 'Sen', sans-serif;
+  color: #D7D2CF;
+  margin-bottom: 3em;
+  
+}
+
+.context-item p { 
+  font-family: 'Sen', sans-serif;
+  color: #D7D2CF;
+}
+.member-card { 
+  margin-bottom: 0.5em;
+}
+.member-card img { 
+  max-width: 50%;
+}
+
+#about { 
+  align-items: center;
+  position: static;
+  padding-left: 50px;
+}
+
+
+@media (min-width: 769px) { 
+  h1 { 
+      font-size: 4rem;
+  }
+  #proj { 
+      margin-left: 30px;
+  }
+ #logo { 
+     max-width: 100px;
+     margin-left: 210px;
+ }
+
+ #product { 
+  margin-bottom: 6em;
+  }
+
+  #screen { 
+      max-width:50%;
+  }
+ #page-title { 
+     margin-bottom: 6em;
+ }
+
+ #about-jasmine { 
+     padding: 2em;
+ }
+ .row #about {
+      display: grid;
+      flex-direction: row;
+  
+  }
+
+
+
+}
+
+@media (min-width: 1025px) { 
+
+  #subtitle p { 
+      font-size: 1.25em;
+      text-align: center;
+      padding: 20%;
+      
+  }
+
+  #page-title { 
+      margin: 0 auto;
+      margin-top: 4em;
+  }
+
+  
+  #screen { 
+      align-items: center;
+  }
+  #phone-screen  {
+      width: auto;
+      height: 70%;
+  }
+
+  #product { 
+      margin-top: 3em;
+  }
+
+  #team { 
+      margin-left: 1em;
+  }
+
+  #about { 
+      vertical-align: middle;
+  }
+  
+
+  
+
+}
