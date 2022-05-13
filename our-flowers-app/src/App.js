@@ -20,8 +20,7 @@ import './index.css'; //import css file!
 
 export default function App() {
   return (
-    <div className="container">
-      <Header/>    
+    <div className="container">  
       <Gallery/>
     </div>
   );
