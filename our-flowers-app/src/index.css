@@ -134,7 +134,9 @@ ul {
 }
 
 /*landing page styling hereeee*/
-body{
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Sen&display=swap');
+
+.bodycolor{
   background-color: #121212;
   
 }
@@ -233,8 +235,8 @@ img {
 }
 
 #about { 
-  align-items: center;
-  position: static;
+  align-items:flex-end;
+  
   padding-left: 50px;
 }
 
@@ -307,7 +309,7 @@ img {
   }
 
   #about { 
-      vertical-align: middle;
+      flex-direction: row;
   }
   
 

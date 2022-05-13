@@ -24,7 +24,7 @@ export default function Header() {
                             <NavLink href="/search">Search</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink>
+                            <NavLink href="/about">About</NavLink>
                         </NavItem>
                         <NavItem>
                             <NavLink href="/userprofile">Profile</NavLink>
