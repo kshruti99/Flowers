@@ -232,13 +232,6 @@ img {
   max-width: 50%;
 }
 
-#about { 
-  align-items: center;
-  position: static;
-  padding-left: 50px;
-}
-
-
 @media (min-width: 769px) { 
   h1 { 
       font-size: 4rem;
@@ -270,8 +263,6 @@ img {
       flex-direction: row;
   
   }
-
-
 
 }
 
