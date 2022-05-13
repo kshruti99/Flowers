@@ -2,22 +2,7 @@ import React from 'react';
 
 export default function About() {
 
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="Project Jasmine Capstone Landing Page">
-        <link rel="icon" type="image/png" href="./img/logo.png">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="./css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&family=Sen&display=swap" rel="stylesheet">
-        <title>PROJECT JASMINE</title>
-        <meta name="author" content="Team Flowers">
-    </head>
-    
+    return(
     <body>
         <nav>
             <ul>
@@ -34,7 +19,7 @@ export default function About() {
                     <h1 class="title">JASMINE</h1>
                 </div>
                 <div class="col" id="logo">
-                    <img src="./img/logo.png">
+                    <img src="./img/logo.png"></img>
                 </div>
                 
             </div>   
@@ -45,7 +30,7 @@ export default function About() {
                     <p>a celebration of beauty in variation: created to showcase the many forms of humankind</p>
                 </div>
                 <div class="col" id="screen">
-                    <img src="./img/screen1.jpg" id="phone-screen">
+                    <img src="./img/screen1.jpg" id="phone-screen"></img>
                 </div>
             </div>
         </div>
@@ -76,29 +61,23 @@ export default function About() {
         <h3 class="context-title" id="team"> Meet the Team </h3>
         <div class="row container-fluid" id="about">
             <div class="column" id="member-card">
-                <img src="./img/shreya.png">
+                <img src="./img/shreya.png"></img>
                 <p>shreya balaji: design + research</p>
             </div>
             <div class="column" id="member-card">
-                <img src="./img/kavya.png">
+                <img src="./img/kavya.png"></img>
                 <p>kavya iyer: pm + research</p>
             </div>
             <div class="column" id="member-card">
-                <img src="./img/roshani.png">
+                <img src="./img/roshani.png"></img>
                 <p>roshani ravi: swe</p>
             </div>
             <div class="column" id="member-card">
-                <img src="./img/shruti.png">
+                <img src="./img/shruti.png"></img>
                 <p>shruti kompella: swe</p>
             </div>
     
         </div>
-    
-    
-    
-    
-    
-    
     
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
             integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -110,6 +89,5 @@ export default function About() {
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
     </body>
-    
-    </html>
+    )
 } 
