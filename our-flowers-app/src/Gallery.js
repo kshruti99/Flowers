@@ -4,7 +4,7 @@ import galleryObject from './galleryObjects.json';
 import { Container, Row, Col } from 'reactstrap';
 import GalleryCard from './GalleryCard';
 
-export default function Gallery() {
+export default function Gallery(props) {
 
     const tagValues = [
         { id: 1, name: 'big nose' },
