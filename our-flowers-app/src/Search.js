@@ -4,6 +4,7 @@ import { Component } from 'react';
 import { useEffect, useState } from 'react'; //import React Component
 import Gallery from './Gallery.js';
 import GalleryCard from './GalleryCard.js';
+import galleryObjects from './galleryObjects.json';
 import Scroll from './Scroll';
 
 const galData = require('./galleryObjects.json');
@@ -26,42 +27,57 @@ const tagValues = [
 
 
 
-function PillFilter() {
+// function PillFilter() {
 
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get('s');
-    const filteredPosts = filterPosts(tagValues, query);
-    return (
-        <div>
-            <p style={{ color: 'white' }} className="sugg">Tags:</p>
-            <ul>
-                {filteredPosts.map((tag) => (
-                    <button className="pill" key={tag.id}>{tag.name}</button>
-                ))}
+//     const { search } = window.location;
+//     const query = new URLSearchParams(search).get('s');
+//     const filteredPosts = filterPosts(tagValues, query);
 
-            </ul>
+//     //function
+//     const filterPics = (tagid) => {
+//         return (
+//             //loop through galleryObjects
+//             //check tagID list
+//             //inside tagID you have to check if it contains the tagid I'm filtering for
+//             //if so, display it/return it
+//             galleryObjects.filter((img) => {
 
-        </div>
-
-    )
-}
-
-function SearchBar() {
-    return (
-        <form action="/" method="get">
+//             }
+//             );
+//     }
 
 
-            <input
-                type="text"
-                id="header-search"
-                placeholder="search"
-                name="s"
-            />
-            <button type="submit" id='cancel-button'>cancel</button>
+//     return (
+//         <div>
+//             <p style={{ color: 'white' }} className="sugg">Tags:</p>
+//             <ul>
+//                 {filteredPosts.map((tag) => (
+//                     <button className="pill" key={tag.id}>{tag.name}</button>
+//                 ))}
 
-        </form>
-    )
-}
+//             </ul>
+
+//         </div>
+
+//     )
+// }
+
+// function SearchBar() {
+//     return (
+//         <form action="/" method="get">
+
+
+//             <input
+//                 type="text"
+//                 id="header-search"
+//                 placeholder="search"
+//                 name="s"
+//             />
+//             <button type="submit" id='cancel-button'>cancel</button>
+
+//         </form>
+//     )
+// }
 
 const filterPosts = (tagValues, query) => {
     if (!query) {
@@ -75,6 +91,9 @@ const filterPosts = (tagValues, query) => {
 };
 
 export default function Search(props) {
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const filteredPosts = filterPosts(tagValues, query);
     //imported scroll function
     //using the GalleryCard function imported in 
     //useState hook
@@ -109,13 +128,44 @@ export default function Search(props) {
         );
     }
 
+    const [searchResults, getSearchResults] = useState([]);
+
+    // useEffect(() => {
+    //     const galPosts = galleryObjects.filter(post =>
+    //         (post.tagid).contains(searchResults)
+    //     );
+    //     getSearchResults(galPosts);
+    // }, [searchField]);
+
 
     return (
         <div>
 
-            <SearchBar />
+            {/* <SearchBar /> */}
+            <form action="/" method="get">
 
-            <PillFilter />
+
+                <input
+                    type="text"
+                    id="header-search"
+                    placeholder="search"
+                    name="s"
+                />
+                <button type="submit" id='cancel-button'>cancel</button>
+
+            </form>
+
+            {/* <PillFilter /> */}
+            <div>
+                <p style={{ color: 'white' }} className="sugg">Tags:</p>
+                <ul>
+                    {filteredPosts.map((tag) => (
+                        <button className="pill" key={tag.id}>{tag.name}</button>
+                    ))}
+
+                </ul>
+
+            </div>
 
             <input
                 type="search"
