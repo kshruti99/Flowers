@@ -14,7 +14,7 @@ import UserProfile from './UserProfile';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header/>
+        <Header />
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<App />} />

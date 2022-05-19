@@ -2,6 +2,11 @@ import React from 'react';
 import { IoIosSearch } from 'react-icons/io';
 import { Component } from 'react';
 import { useEffect, useState } from 'react'; //import React Component
+import Gallery from './Gallery.js';
+import GalleryCard from './GalleryCard.js';
+import Scroll from './Scroll';
+
+const galData = require('./galleryObjects.json');
 
 
 const tagValues = [
@@ -28,7 +33,7 @@ function PillFilter() {
     const filteredPosts = filterPosts(tagValues, query);
     return (
         <div>
-            <p style={{ color: 'white' }} className="sugg">Suggested Tags:</p>
+            <p style={{ color: 'white' }} className="sugg">Tags:</p>
             <ul>
                 {filteredPosts.map((tag) => (
                     <button className="pill" key={tag.id}>{tag.name}</button>
@@ -41,23 +46,22 @@ function PillFilter() {
     )
 }
 
-// function SearchBar() {
-//     return (
-//         <form action="/" method="get">
+function SearchBar() {
+    return (
+        <form action="/" method="get">
 
 
-//             <input
-//                 type="text"
-//                 id="header-search"
-//                 placeholder="search"
-//                 name="s"
-//                 onChange={searchTyped}
-//             />
-//             <button type="submit" id='cancel-button'>cancel</button>
+            <input
+                type="text"
+                id="header-search"
+                placeholder="search"
+                name="s"
+            />
+            <button type="submit" id='cancel-button'>cancel</button>
 
-//         </form>
-//     )
-// }
+        </form>
+    )
+}
 
 const filterPosts = (tagValues, query) => {
     if (!query) {
@@ -71,39 +75,56 @@ const filterPosts = (tagValues, query) => {
 };
 
 export default function Search(props) {
-    const [galTag, setTagInp] = useState("");
-    const [galleryResults, getGalleryResults] = useState([]);
-    const searchTyped = e => {
-        setTagInp(e.target.value);
+    //imported scroll function
+    //using the GalleryCard function imported in 
+    //useState hook
+    const [searchField, setSearchField] = useState("");
+    //filter function on the list received from the parents
+    //checking for name value (of tag)
+    //include function catches for any results that have any of the letters of a tag that are typed into the search bar
+    //if it fulfills that query, the details are sent to filteredTags
+    const filteredTags = tagValues.filter(
+        postTag => {
+            return (
+                postTag
+                    .name
+                    .toLowerCase()
+                == searchField.toLowerCase()
+            );
+        }
+    );
+
+    const handleChange = e => {
+        setSearchField(e.target.value);
     };
 
-    useEffect(() => {
-        const galleryResults = props.info.filter(imgTag =>
-            (imgTag.tag + '').indexOf('' + galTag) > -1
+    //created function to render the details - wraps GalleryCard component
+    //pass in props?
+    //called inside return
+    function searchList(props) {
+        return (
+            <Scroll>
+                {/* <GalleryCard props={props} /> */}
+            </Scroll>
         );
-        getGalleryResults(galleryResults);
-    }, [galTag, props.info]);
+    }
+
 
     return (
         <div>
 
-            <form action="/" method="get">
-
-
-                <input
-                    type="text"
-                    id="header-search"
-                    placeholder="search"
-                    name="s"
-                    onChange={searchTyped}
-                />
-                <button type="submit" id='cancel-button'>cancel</button>
-
-            </form>
+            <SearchBar />
 
             <PillFilter />
 
+            <input
+                type="search"
+                placeholder="Search Tags"
+                //input = value of onChange attribute as the handleChange function
+                //onChange sets the value of onChange with setSearchField()
+                onChange={handleChange}
+            />
+            {searchList()}
         </div>
     );
 }
-
