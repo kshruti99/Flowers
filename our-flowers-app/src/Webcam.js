@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import Webcam from "react-webcam";
+//import storage from './firebase';
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
+// export const storage = firebase.storage();
 
 
 const WebcamComponent = () => <Webcam />;
@@ -12,15 +16,22 @@ const videoConstraints = {
 
 export const WebcamCapture = () => {
 
-    const [image,setImage]=useState('');
+    const [image, setImage] = useState(null);
     const webcamRef = React.useRef(null);
 
-    
+
     const capture = React.useCallback(
         () => {
-        const imageSrc = webcamRef.current.getScreenshot();
-        setImage(imageSrc)
-        });
+            const imageSrc = webcamRef.current.getScreenshot();
+            setImage(imageSrc)
+        }, [webcamRef, setImage]);
+
+    // const upload = () => {
+    //     if (image == null)
+    //         return;
+    //     storage.ref(`/images/${image.name}`).put(image)
+    //         .on("state_changed", alert("success"), alert);
+    // }
 
 
     return (
@@ -38,12 +49,20 @@ export const WebcamCapture = () => {
             </div>
             <div>
                 {image != '' ?
-                    <button onClick={(e) => {
-                        e.preventDefault();
-                        setImage('')
-                    }}
-                        className="webcam-btn">
-                        Retake Image</button> :
+                    <div>
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                            setImage('')
+                        }}
+                            className="webcam-btn">
+                            Retake Image</button>
+                        <button onClick={(e) => {
+                            e.preventDefault();
+                            setImage('')
+                        }}>
+                            Upload</button>
+                    </div>
+                    :
                     <button onClick={(e) => {
                         e.preventDefault();
                         capture();

@@ -84,7 +84,7 @@ export default function UserProfile() {
                     </div>
                 </div> */}
                 <div className="row">
-                    <WebcamCapture/>
+                    <WebcamCapture />
                 </div>
                 <div className="row">
                     <Gallery/>
