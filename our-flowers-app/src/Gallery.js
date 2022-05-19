@@ -27,8 +27,8 @@ export default function Gallery(props) {
             <Container>
                 <Row>
                     {galleryObject.map((gal, i) =>
-                        <Col>
-                            <GalleryCard key={gal.galid} gal={gal} />
+                        <Col key={gal.galid}>
+                            <GalleryCard gal={gal} />
                         </Col>
                     )}
                 </Row>

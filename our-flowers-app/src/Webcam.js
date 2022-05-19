@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Webcam from "react-webcam";
 //import storage from './firebase';
+import {storage} from "./index"
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
-// export const storage = firebase.storage();
+// const storage = firebase.storage().ref();
 
 
 const WebcamComponent = () => <Webcam />;
@@ -17,28 +18,43 @@ const videoConstraints = {
 export const WebcamCapture = () => {
 
     const [image, setImage] = useState(null);
+    const [url, setUrl] = useState("");
     const webcamRef = React.useRef(null);
 
 
     const capture = React.useCallback(
         () => {
             const imageSrc = webcamRef.current.getScreenshot();
+            // console.log(imageSrc);
             setImage(imageSrc)
         }, [webcamRef, setImage]);
 
-    // const upload = () => {
-    //     if (image == null)
-    //         return;
-    //     storage.ref(`/images/${image.name}`).put(image)
-    //         .on("state_changed", alert("success"), alert);
-    // }
-
+    const handleUpload = () => {
+        console.log(image);
+        const uploadTask = storage.ref("images/uploads").putString(image , 'data_url');
+        uploadTask.on(
+          "state_changed",
+          error => {
+            console.log(error);
+          },
+          () => {
+            storage
+              .ref("images")
+              .child("uploads")
+              .getDownloadURL()
+              .then(url => {
+                setUrl(url);
+              });
+          }
+        );
+        setImage(null)
+      };
 
     return (
         <div className="webcam-container">
             <div className="webcam-img">
 
-                {image == '' ? <Webcam
+                {image == null ? <Webcam
                     audio={false}
                     height={200}
                     ref={webcamRef}
@@ -48,19 +64,21 @@ export const WebcamCapture = () => {
                 /> : <img src={image} />}
             </div>
             <div>
-                {image != '' ?
+                {image != null ?
                     <div>
                         <button onClick={(e) => {
                             e.preventDefault();
-                            setImage('')
+                            setImage(null);
                         }}
                             className="webcam-btn">
                             Retake Image</button>
-                        <button onClick={(e) => {
-                            e.preventDefault();
-                            setImage('')
+                        {/* <button onClick={(e) => {
+                            // e.preventDefault();
+                            // setImage(null);
+                            handleUpload()
                         }}>
-                            Upload</button>
+                            Upload</button> */}
+                        <button onClick={handleUpload}>Upload</button>
                     </div>
                     :
                     <button onClick={(e) => {

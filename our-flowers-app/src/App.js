@@ -107,6 +107,7 @@ export default function App(props) {
 				<Routes>
 					<Route path="/" element={<Gallery uploads={props.galObjects} />} />
 					<Route path="about" element={<About />} />
+					<Route path="uploadphoto" element={<About />} />
 					<Route path="search" element={<Search />} />
 					<Route path="userprofile" element={<UserProfile />} />
 				</Routes>
