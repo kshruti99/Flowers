@@ -7,9 +7,6 @@ import GalleryCard from './GalleryCard.js';
 import galleryObjects from './galleryObjects.json';
 import Scroll from './Scroll';
 
-const galData = require('./galleryObjects.json');
-
-
 const tagValues = [
     { id: 1, name: 'big nose' },
     { id: 2, name: 'bushy eyebrows' },
@@ -25,60 +22,6 @@ const tagValues = [
 
 ];
 
-
-
-// function PillFilter() {
-
-//     const { search } = window.location;
-//     const query = new URLSearchParams(search).get('s');
-//     const filteredPosts = filterPosts(tagValues, query);
-
-//     //function
-//     const filterPics = (tagid) => {
-//         return (
-//             //loop through galleryObjects
-//             //check tagID list
-//             //inside tagID you have to check if it contains the tagid I'm filtering for
-//             //if so, display it/return it
-//             galleryObjects.filter((img) => {
-
-//             }
-//             );
-//     }
-
-
-//     return (
-//         <div>
-//             <p style={{ color: 'white' }} className="sugg">Tags:</p>
-//             <ul>
-//                 {filteredPosts.map((tag) => (
-//                     <button className="pill" key={tag.id}>{tag.name}</button>
-//                 ))}
-
-//             </ul>
-
-//         </div>
-
-//     )
-// }
-
-// function SearchBar() {
-//     return (
-//         <form action="/" method="get">
-
-
-//             <input
-//                 type="text"
-//                 id="header-search"
-//                 placeholder="search"
-//                 name="s"
-//             />
-//             <button type="submit" id='cancel-button'>cancel</button>
-
-//         </form>
-//     )
-// }
-
 const filterPosts = (tagValues, query) => {
     if (!query) {
         return tagValues;
@@ -93,6 +36,7 @@ const filterPosts = (tagValues, query) => {
 export default function Search(props) {
     const { search } = window.location;
     const query = new URLSearchParams(search).get('s');
+
     const filteredPosts = filterPosts(tagValues, query);
     //imported scroll function
     //using the GalleryCard function imported in 
@@ -113,6 +57,28 @@ export default function Search(props) {
         }
     );
 
+    //console.log(filteredTags[0].id);
+
+    const filteredGalObjs = (searchedTag) => galleryObjects.filter(
+        (galObj) => {
+            // console.log(galObj);
+            const set = new Set(galObj.tagid);
+            return set.has(searchedTag);
+
+            // galObj.tagid.forEach((num) => {
+            //     // console.log('current tag in array' + num);
+            //     // console.log(tagValues[0].id);
+            //     if (num == 2) {
+            //         console.log("true herm");
+            //         return true;
+            //     }
+            // })
+        }
+    );
+
+    console.log(filteredGalObjs(5));
+
+
     const handleChange = e => {
         setSearchField(e.target.value);
     };
@@ -130,12 +96,12 @@ export default function Search(props) {
 
     const [searchResults, getSearchResults] = useState([]);
 
-    // useEffect(() => {
-    //     const galPosts = galleryObjects.filter(post =>
-    //         (post.tagid).contains(searchResults)
-    //     );
-    //     getSearchResults(galPosts);
-    // }, [searchField]);
+    useEffect(() => {
+        const galPosts = galleryObjects.filter(post =>
+            (post.tagid) == (searchResults)
+        );
+        getSearchResults(galPosts);
+    }, [searchField]);
 
 
     return (
