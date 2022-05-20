@@ -22,6 +22,8 @@ const tagValues = [
 
 ];
 
+//console.log(tagValues[0].name);
+
 const filterPosts = (tagValues, query) => {
     if (!query) {
         return tagValues;
@@ -41,23 +43,26 @@ export default function Search(props) {
     //imported scroll function
     //using the GalleryCard function imported in 
     //useState hook
-    const [searchField, setSearchField] = useState("");
+    //const [searchField, setSearchField] = useState("");
     //filter function on the list received from the parents
     //checking for name value (of tag)
     //include function catches for any results that have any of the letters of a tag that are typed into the search bar
     //if it fulfills that query, the details are sent to filteredTags
-    const filteredTags = tagValues.filter(
-        postTag => {
-            return (
-                postTag
-                    .name
-                    .toLowerCase()
-                == searchField.toLowerCase()
-            );
-        }
-    );
+    // const filteredTags = tagValues.filter(
+    //     postTag => {
+    //         return (
+    //             postTag
+    //                 .name
+    //                 .toLowerCase()
+    //             == searchField.toLowerCase()
+    //         );
+    //     }
+    // );
 
     //console.log(filteredTags[0].id);
+
+    // console.log(searchField);
+
 
     const filteredGalObjs = (searchedTag) => galleryObjects.filter(
         (galObj) => {
@@ -76,32 +81,109 @@ export default function Search(props) {
         }
     );
 
-    console.log(filteredGalObjs(5));
+    const [searchField, setSearchField] = useState("");
 
+    // const searchBar = (searchField) => tagValues.filter(
+    //     (idnum) => {
+    //         const iden = tagValues[idnum].name
+    //         //const iden = tagValues[idnum];
+    //         //if (iden == )
+    //         //console.log(iden);
+    //     }
+    // );
 
-    const handleChange = e => {
-        setSearchField(e.target.value);
+    // const match = -1;
+    //         for (let i = 0; i < 11; i++) {
+    //             console.log(tagValues.length);
+    //             console.log(i + "help");
+    //             if (tagValues[i].name == searchField) {
+    //                 match = tagValues[i].id;
+    //             }
+    //         }
+
+    function getTagId(searchField) {
+        console.log(searchField);
+        for (let i = 0; i < 11; i++) {
+            console.log(tagValues.length);
+            console.log(i + "help");
+            if (tagValues[i].name == searchField) {
+                //return tagValues[i].id;
+                filteredGalObjs(tagValues[i].id);
+            }
+            return -1;
+        }
     };
+
+
+    // for (let i = 0; i < 11; i++) {
+    //     console.log(tagValues.length);
+    //     console.log(i + "help");
+    //     if (tagValues[i].name == searchField) {
+    //         const match = tagValues[i].id;
+    //     }
+    // }
+
+    ///onsole.log(getTagId("gapped teeth"));
+    //console.log(filteredGalObjs(getTagId("gapped teeth")));
+
+    const handleChange = (e) => {
+        setSearchField(e.target.value);
+        console.log(searchField + "*");
+        console.log(getTagId(searchField));
+        const store = filteredGalObjs(getTagId(searchField));
+        //console.log(store);
+    };
+
+
+    // if (searchInput.length > 0) {
+    //     tagValues.filter((nameid) => {
+    //         return filteredGalObjs(nameid.id.match(searchInput));
+    //     });
+    // }
+
+
+    // tagValues(
+    //     // (index) => {
+    //     //     const correctID = 0;
+    //     //     if (tagValues[index].name == searchField) {
+    //     //         correctID = tagValues[index].id;
+    //     //     }
+    //     //     return filteredGalObjs(correctID);
+    //     // }
+    // );
+
+
+
+
+
+
+
+    // console.log(filteredGalObjs(5));
+
+
+    // const handleChange = e => {
+    //     setSearchField(e.target.value);
+    // };
 
     //created function to render the details - wraps GalleryCard component
     //pass in props?
     //called inside return
-    function searchList(props) {
-        return (
-            <Scroll>
-                {/* <GalleryCard props={props} /> */}
-            </Scroll>
-        );
-    }
+    // function searchList(props) {
+    //     return (
+    //         <Scroll>
+    //             {/* <GalleryCard props={props} /> */}
+    //         </Scroll>
+    //     );
+    // }
 
-    const [searchResults, getSearchResults] = useState([]);
+    // const [searchResults, getSearchResults] = useState([]);
 
-    useEffect(() => {
-        const galPosts = galleryObjects.filter(post =>
-            (post.tagid) == (searchResults)
-        );
-        getSearchResults(galPosts);
-    }, [searchField]);
+    // useEffect(() => {
+    //     const galPosts = galleryObjects.filter(post =>
+    //         (post.tagid) == (searchResults)
+    //     );
+    //     getSearchResults(galPosts);
+    // }, [searchField]);
 
 
     return (
@@ -140,7 +222,7 @@ export default function Search(props) {
                 //onChange sets the value of onChange with setSearchField()
                 onChange={handleChange}
             />
-            {searchList()}
+            {/* {searchList()} */}
         </div>
     );
 }
