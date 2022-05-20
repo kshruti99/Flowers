@@ -110,10 +110,7 @@ export default function Search(props) {
                 //return tagValues[i].id;
                 return tagValues[i].id;
 
-            } //else {
-              //  return -1;
-            //}
-            //
+            } 
         }
         return -1;
 
