@@ -26,7 +26,7 @@ export default function Gallery(props) {
             <h4 style={{ color: "#A2D7D7" }}>Feed</h4>
             <Container>
                 <Row>
-                    {galleryObject.map((gal, i) =>
+                    {props.data.map((gal, i) =>
                         <Col key={gal.galid}>
                             <GalleryCard gal={gal} />
                         </Col>

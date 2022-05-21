@@ -25,18 +25,20 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyACLSlLCTj4UkDVdC8NG4FcJKrwZyAuG6U",
-  authDomain: "jasmine-gallery-24816.firebaseapp.com",
-  projectId: "jasmine-gallery-24816",
-  storageBucket: "jasmine-gallery-24816.appspot.com",
-  messagingSenderId: "692095937928",
-  appId: "1:692095937928:web:c81c9fa2818dae2f0b1e3d"
-};
+    apiKey: "AIzaSyACLSlLCTj4UkDVdC8NG4FcJKrwZyAuG6U",
+    authDomain: "jasmine-gallery-24816.firebaseapp.com",
+    databaseURL: "https://jasmine-gallery-24816-default-rtdb.firebaseio.com",
+    projectId: "jasmine-gallery-24816",
+    storageBucket: "jasmine-gallery-24816.appspot.com",
+    messagingSenderId: "692095937928",
+    appId: "1:692095937928:web:c81c9fa2818dae2f0b1e3d"
+  };
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-const storage = firebase.storage()
+const storage = firebase.storage();
+const database = firebase.database();
 
 
 ReactDOM.render(
@@ -54,5 +56,5 @@ ReactDOM.render(
 reportWebVitals();
 
 export  {
-    storage, firebase as default
+    database, storage, firebase as default
   }

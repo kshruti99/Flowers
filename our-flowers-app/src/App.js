@@ -4,6 +4,7 @@ import Search from './Search.js';
 import About from './About';
 import UserProfile from './UserProfile';
 import Header from './Header';
+import { WebcamCapture } from './Webcam';
 import { Link } from "react-router-dom";
 import {
 	Navbar,
@@ -105,9 +106,9 @@ export default function App(props) {
 			<div className="container">
 				<Header signOutCallback={handleSignOut} />
 				<Routes>
-					<Route path="/" element={<Gallery uploads={props.galObjects} />} />
+					<Route path="/" element={<Gallery data={props.galObjects} />} />
 					<Route path="about" element={<About />} />
-					<Route path="uploadphoto" element={<About />} />
+					<Route path="uploadphoto" element={<WebcamCapture />} />
 					<Route path="search" element={<Search />} />
 					<Route path="userprofile" element={<UserProfile />} />
 				</Routes>

@@ -1,6 +1,6 @@
 // import React, {useEffect, useState } from 'react'; //import React Component
 // import{Redirect} from 'react-router-dom';
-// import { Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 function GalleryCard(props) {
   const tagValues = [

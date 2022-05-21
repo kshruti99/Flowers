@@ -26,6 +26,9 @@ export default function Header(props) {
                     <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink>
                 </NavItem>
                 <NavItem>
+                    <NavLink href="/uploadphoto">Post</NavLink>
+                </NavItem>
+                <NavItem>
                     <NavLink href="/userprofile">Profile</NavLink>
                 </NavItem>
                 <NavItem>
