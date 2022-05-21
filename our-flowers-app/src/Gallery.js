@@ -4,7 +4,7 @@ import galleryObject from './galleryObjects.json';
 import { Container, Row, Col } from 'reactstrap';
 import GalleryCard from './GalleryCard';
 
-export default function Gallery() {
+export default function Gallery(props) {
 
     const tagValues = [
         { id: 1, name: 'big nose' },
@@ -26,9 +26,9 @@ export default function Gallery() {
             <h4 style={{ color: "#A2D7D7" }}>Feed</h4>
             <Container>
                 <Row>
-                    {galleryObject.map((gal, i) =>
-                        <Col>
-                            <GalleryCard key={gal.galid} gal={gal} />
+                    {props.data.map((gal, i) =>
+                        <Col key={gal.galid}>
+                            <GalleryCard gal={gal} />
                         </Col>
                     )}
                 </Row>

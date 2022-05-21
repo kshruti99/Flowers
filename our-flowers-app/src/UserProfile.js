@@ -1,90 +1,62 @@
-import { Button } from 'reactstrap';
 import Gallery from './Gallery';
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
+import { WebcamCapture } from './Webcam';
+import {
+    NavLink,
+    Button
+} from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
+import galleryObject from './galleryObjects.json';
+
+import firebase from "firebase/compat/app";
 
 export default function UserProfile() {
-    const videoRef = useRef(null);
-    const photoRef = useRef(null);
-    const stripRef = useRef(null);
+    const navigate = useNavigate();
+    const currentUser = firebase.auth().currentUser
+
+    //allGalPosts is an array of objects structured exactly like galleryObjects.json
+    const [allGalPosts, setallGalPosts] = useState([]);
 
     useEffect(() => {
-        getVideo();
-    }, [videoRef]);
+        const allGalPostsRef = firebase.database().ref('galImages/')
 
-    const getVideo = () => {
-        navigator.mediaDevices
-        .getUserMedia({ video: { width: 300 } })
-        .then(stream => {
-            let video = videoRef.current;
-            video.srcObject = stream;
-            video.play();
+        allGalPostsRef.on('value', (snapshot) => {
+            const theGalObj = snapshot.val()
+            if (theGalObj != null) {
+                let galsKeyArr = Object.keys(theGalObj);
+                let thegalsArr = galsKeyArr.map((key) => {
+                    let galKeyObj = theGalObj[key]
+                    galKeyObj.key = key
+                    return galKeyObj;
+                })
+                setallGalPosts(thegalsArr);
+            }
+            else setallGalPosts([]);
         })
-        .catch(err => {
-            console.error("error:", err);
-        });
-    };
-
-    const paintToCanvas = () => {
-        let video = videoRef.current;
-        let photo = photoRef.current;
-        let ctx = photo.getContext("2d");
-
-        const width = 320;
-        const height = 240;
-        photo.width = width;
-        photo.height = height;
-
-        return setInterval(() => {
-        ctx.drawImage(video, 0, 0, width, height);
-        }, 200);
-    };
-
-    const takePhoto = () => {
-        //edit href here to download to img folder? then upload to firebase here too
-        let photo = photoRef.current;
-        let strip = stripRef.current;
-
-        console.warn(strip);
-
-        const data = photo.toDataURL("image/jpeg");
-
-        console.warn(data);
-        const link = document.createElement("a");
-        link.href = data;
-        link.setAttribute("download", "myWebcam");
-        link.innerHTML = `<img src='${data}' alt='thumbnail'/>`;
-        strip.insertBefore(link, strip.firstChild);
-    };
+        return function cleanup() {
+            allGalPostsRef.off();
+        }
+    })
 
     return (
         <div>
             <div className="container">
                 <div className="row">
                     <div className="card">
-                        <div className="card-img-top">
-                            <img src='/img/1.png' className='imgsize'></img>
+                        <div className="card-body">
+                            {currentUser.displayName}
                         </div>
                         <div className="card-body">
-                            Mira
-                        </div>
-                        <div className="card-body">
-                            Liked Images
+                            My Uploads
                         </div>
                     </div>
                 </div>
                 <div className="row">
-                    <Button variant="Light" size="lg" onClick={() => takePhoto()}>
-                        {/* onClick={videoRef} */}
-                        Upload a Picture
-                    </Button>
-                    <video onCanPlay={() => paintToCanvas()} ref={videoRef} />
-                    <canvas ref={photoRef} />
-                    <div>
-                        <div ref={stripRef} />
-                    </div>
+                    <Button onClick={() => { navigate('/uploadphoto'); }} size="medium" color="secondary" aria-label="upload photo button">Upload Photo</Button>
                 </div>
                 <div className="row">
-                    <Gallery/>
+                    {/* pass in allGalPosts to data */}
+                    <Gallery data={galleryObject} />
                 </div>
             </div>
         </div>

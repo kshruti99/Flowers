@@ -11,18 +11,40 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import UserProfile from './UserProfile';
 
 
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/database';
+import 'firebase/compat/storage';
+
+import GAL_DATA from './galleryObjects.json';
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyACLSlLCTj4UkDVdC8NG4FcJKrwZyAuG6U",
+    authDomain: "jasmine-gallery-24816.firebaseapp.com",
+    databaseURL: "https://jasmine-gallery-24816-default-rtdb.firebaseio.com",
+    projectId: "jasmine-gallery-24816",
+    storageBucket: "jasmine-gallery-24816.appspot.com",
+    messagingSenderId: "692095937928",
+    appId: "1:692095937928:web:c81c9fa2818dae2f0b1e3d"
+  };
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+const storage = firebase.storage();
+const database = firebase.database();
+
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header/>
         <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="gallery" element={<Gallery />} />
-                <Route path="about" element={<About />} />
-                <Route path="search" element={<Search />} />
-                <Route path="userprofile" element={<UserProfile />} />
-            </Routes>
+            <App galObjects={GAL_DATA}/>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
@@ -32,3 +54,7 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export  {
+    database, storage, firebase as default
+  }

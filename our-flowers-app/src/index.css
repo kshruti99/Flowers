@@ -7,6 +7,22 @@ body {
   background-color: #121212;
 }
 
+.pill-version { 
+  background-color: #ddd;
+  border: none;
+  color: black;
+  padding: 5px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 1px 1px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: 'Sen', sans-serif;
+  font-size: small;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -37,6 +53,12 @@ code {
   height: 290px;
   width: 200px;
   margin: 10px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pill { 
@@ -72,6 +94,10 @@ code {
 }
 .smallpill:hover { 
   background-color: white;
+}
+
+label {
+  color: white;
 }
 
 .imgsize {
