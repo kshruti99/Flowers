@@ -52,7 +52,6 @@ export const WebcamCapture = () => {
 
     const capture = React.useCallback(
         () => {
-            // console.log(GetData());
             const imageSrc = webcamRef.current.getScreenshot();
             var today = new Date();
             var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();

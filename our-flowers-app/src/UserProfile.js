@@ -9,7 +9,6 @@ import { useNavigate } from 'react-router-dom';
 import galleryObject from './galleryObjects.json';
 
 import firebase from "firebase/compat/app";
-import GetData from './GetData';
 
 export default function UserProfile() {
     const navigate = useNavigate();
