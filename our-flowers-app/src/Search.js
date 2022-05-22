@@ -51,7 +51,7 @@ export default function Search(props) {
     function getTagId(searchField) {
         console.log("inside tagId " + searchField);
         for (let i = 0; i < 11; i++) {
-            console.log(i + "help");
+            //console.log(i + "help");
             if (tagValues[i].name == searchField) {
                 return tagValues[i].id;
             }
@@ -63,11 +63,12 @@ export default function Search(props) {
 
     const handleChange = (e) => {
         setSearchField(e.target.value);
-        console.log(searchField + " *");
-        console.log("running getTagID " + getTagId(searchField));
+        //console.log(searchField + " *");
+        //console.log("running getTagID " + getTagId(searchField));
         const store = filteredGalObjs(getTagId(searchField));
         console.log(store);
     };
+
 
     return (
         <div>
