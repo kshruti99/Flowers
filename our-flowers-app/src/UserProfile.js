@@ -32,6 +32,8 @@ export default function UserProfile() {
                 console.log(thegalsArr);
 
                 let myGals = thegalsArr.filter(currPost => currPost.uid == currentUser.uid);
+                console.log('curr user is '+currentUser.uid);
+                console.log(myGals);
                 setallMyPosts(myGals);
             }
             else setallMyPosts([]);
