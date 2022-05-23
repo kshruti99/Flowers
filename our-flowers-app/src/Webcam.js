@@ -74,7 +74,7 @@ export const WebcamCapture = () => {
                         console.log(uploadingTag);
                         const valueArray = [];
                         valueArray.push(value);
-                        const newGalObj = { id: uniqueId, path: durl, imgalt: 'image ' + durl, tagid: valueArray }
+                        const newGalObj = { id: uniqueId, uid: currentUser.uid, path: durl, imgalt: 'image ' + durl, tagid: valueArray }
                         console.log(valueArray);
                         console.log(newGalObj);
                         dbRef.push(newGalObj);

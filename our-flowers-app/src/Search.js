@@ -1,10 +1,6 @@
 import React from 'react';
-import { IoIosSearch } from 'react-icons/io';
-import { Component } from 'react';
 import { useEffect, useState } from 'react'; //import React Component
-import Gallery from './Gallery.js';
-import GalleryCard from './GalleryCard.js';
-import galleryObjects from './galleryObjects.json';
+import PostList from './PostList';
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 import "firebase/compat/database";
@@ -135,7 +131,7 @@ export default function Search(props) {
 
             </div>
 
-            <Gallery data={searchedGalPosts} />
+            <PostList data={searchedGalPosts} />
         </div>
     );
 }
