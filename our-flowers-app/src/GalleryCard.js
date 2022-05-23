@@ -1,6 +1,11 @@
 // import React, {useEffect, useState } from 'react'; //import React Component
 // import{Redirect} from 'react-router-dom';
 import { Button } from 'reactstrap';
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
+import "firebase/compat/database";
+import UserProfile from './UserProfile';
+import React, { useEffect, useState } from "react";
 
 function GalleryCard(props) {
   const tagValues = [
@@ -16,7 +21,7 @@ function GalleryCard(props) {
     { id: 10, name: 'hooded eyes' },
     { id: 11, name: 'brown skin' }
   ];
-  //render individual card for one gallery image
+
   return (
     <div key={props.gal.galid} className="card">
       <img className="card-img-top" src={props.gal.path} alt={props.gal.imgalt} />

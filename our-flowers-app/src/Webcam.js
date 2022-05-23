@@ -92,10 +92,11 @@ export const WebcamCapture = () => {
     //     console.log(uploadingTag)
     //     setUploadingTag();
     //   };
+
     const handleChange = (e) => {
         console.log(e);
         setValue(e);
-      }
+    }
     const changeHandler = (e) => {
         // React Select return object instead of value for selection
         // return { value: selected };

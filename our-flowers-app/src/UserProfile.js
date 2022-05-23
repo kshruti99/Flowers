@@ -56,7 +56,8 @@ export default function UserProfile() {
                 </div>
                 <div className="row">
                     {/* pass in allGalPosts to data */}
-                    <Gallery data={galleryObject} />
+                    {/* <Gallery data={galleryObject} /> */}
+                    <Gallery data={allGalPosts} />
                 </div>
             </div>
         </div>

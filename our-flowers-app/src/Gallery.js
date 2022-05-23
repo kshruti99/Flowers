@@ -3,6 +3,10 @@ import { Image } from 'react-bootstrap';
 import galleryObject from './galleryObjects.json';
 import { Container, Row, Col } from 'reactstrap';
 import GalleryCard from './GalleryCard';
+import firebase from "firebase/compat/app";
+import "firebase/compat/storage";
+import "firebase/compat/database";
+import UserProfile from './UserProfile';
 
 export default function Gallery(props) {
 

@@ -49,7 +49,7 @@ export default function Search(props) {
     const [searchField, setSearchField] = useState("");
 
     function getTagId(searchField) {
-        console.log("inside tagId " + searchField);
+        //console.log("inside tagId " + searchField);
         for (let i = 0; i < 11; i++) {
             //console.log(i + "help");
             if (tagValues[i].name == searchField) {
