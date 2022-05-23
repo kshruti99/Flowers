@@ -30,8 +30,8 @@ const data = [
 ];
 
 const videoConstraints = {
-    width: 720,
-    height: 500,
+    //width: 720,
+    //    height: 500,
     facingMode: "user"
 };
 
@@ -102,16 +102,16 @@ export const WebcamCapture = () => {
     };
 
     return (
-        <div className="webcam-container">
+        <div className="webcam-container" /*className="video-stream"*/>
             <div className="webcam-img">
 
                 {image == null ? <Webcam
                     className="center"
                     audio={false}
-                    height={500}
+                    //height={500}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={720}
+                    //width={720}
                     videoConstraints={videoConstraints}
                 /> : <img className="center" src={image} />}
             </div>

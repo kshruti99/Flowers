@@ -7,6 +7,19 @@ body {
   background-color: #121212;
 }
 
+
+@media (max-width: 480px) {
+  .video-stream {
+    /* max-height: 400px;
+    max-width: 500px; */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+
 .pill-version { 
   background-color: #ddd;
   border: none;
@@ -326,8 +339,4 @@ img {
   #about { 
       vertical-align: middle;
   }
-  
-
-  
-
 }
