@@ -38,13 +38,13 @@ const videoConstraints = {
 export const WebcamCapture = () => {
 
     const [image, setImage] = useState(null);
-    const [uploadingTag, setUploadingTag] = useState([]);
+    // const [uploadingTag, setUploadingTag] = useState([]);
     const [uniqueId, setUniqueId] = useState("");
     const [url, setUrl] = useState("");
 
     const webcamRef = React.useRef(null);
     const currentUser = firebase.auth().currentUser;
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState('1');
 
 
     const capture = React.useCallback(
@@ -71,7 +71,7 @@ export const WebcamCapture = () => {
                         setUrl(durl);
                         console.log("durl is " + durl);
                         const dbRef = database.ref('galImages/');
-                        console.log(uploadingTag);
+                        // console.log(uploadingTag);
                         const valueArray = [];
                         valueArray.push(value);
                         const newGalObj = { id: uniqueId, uid: currentUser.uid, path: durl, imgalt: 'image ' + durl, tagid: valueArray }
@@ -88,18 +88,18 @@ export const WebcamCapture = () => {
     const handleChange = (e) => {
         setValue(e.target.value);
     }
-    const changeHandler = (e) => {
-        // React Select return object instead of value for selection
-        // return { value: selected };
-        console.log(e);
-        // console.log(e.target.value);
-        const tagIdsUploading = e.map(item => { return item.value })
-        console.log('id array');
-        console.log(tagIdsUploading);
-        setUploadingTag(tagIdsUploading);
-        console.log('uploading tags')
-        console.log(uploadingTag);
-    };
+    // const changeHandler = (e) => {
+    //     // React Select return object instead of value for selection
+    //     // return { value: selected };
+    //     console.log(e);
+    //     // console.log(e.target.value);
+    //     const tagIdsUploading = e.map(item => { return item.value })
+    //     console.log('id array');
+    //     console.log(tagIdsUploading);
+    //     setUploadingTag(tagIdsUploading);
+    //     console.log('uploading tags')
+    //     console.log(uploadingTag);
+    // };
 
     return (
         <div className="webcam-container">

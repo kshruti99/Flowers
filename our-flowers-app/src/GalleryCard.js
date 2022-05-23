@@ -21,6 +21,11 @@ function GalleryCard(props) {
     { id: 10, name: 'hooded eyes' },
     { id: 11, name: 'brown skin' }
   ];
+  // console.log(tagValues);
+  console.log(props.gal.tagid);
+  console.log(props.gal.tagid.length);
+  let t = props.gal.tagid.map((currTag, j) => tagValues[currTag - 1].name);
+  // console.log(t);
 
   return (
     <div key={props.gal.galid} className="card">
