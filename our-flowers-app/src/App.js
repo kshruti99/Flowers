@@ -48,6 +48,31 @@ export default function App(props) {
 	const [galResults, getGalResults] = useState([]);
 	const [user, setUser] = useState(undefined);
 
+	//allGalPosts is an array of objects structured exactly like galleryObjects.json
+	const [allGalPosts, setallGalPosts] = useState([]);
+
+	useEffect(() => {
+		const allGalPostsRef = firebase.database().ref('galImages/')
+
+		allGalPostsRef.on('value', (snapshot) => {
+			const theGalObj = snapshot.val()
+			if (theGalObj != null) {
+				let galsKeyArr = Object.keys(theGalObj);
+				let thegalsArr = galsKeyArr.map((key) => {
+					let galKeyObj = theGalObj[key]
+					galKeyObj.key = key
+					return galKeyObj;
+				})
+				setallGalPosts(thegalsArr);
+			}
+			else setallGalPosts([]);
+		})
+		return function cleanup() {
+			allGalPostsRef.off();
+		}
+	})
+
+
 	//error handling and making a spinner for loading
 	//const [errorMessage, setErrorMessage] = useState(undefined);
 	const [isLoading, setIsLoading] = useState(true);
@@ -106,7 +131,7 @@ export default function App(props) {
 			<div className="container">
 				<Header signOutCallback={handleSignOut} />
 				<Routes>
-					<Route path="/" element={<Gallery data={props.galObjects} />} />
+					<Route path="/" element={<Gallery data={allGalPosts} />} />
 					<Route path="about" element={<About />} />
 					<Route path="uploadphoto" element={<WebcamCapture />} />
 					<Route path="search" element={<Search />} />
