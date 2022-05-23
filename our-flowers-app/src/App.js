@@ -108,8 +108,7 @@ export default function App(props) {
 	}
 
 	//function which renders list of trails that fit search criteria or all trails when nothing is typed
-	const renderGalleryList = (renderProps) => <Gallery {...renderProps} galObjects={galResults} user={user} />
-
+	
 	if (isLoading) {
 		return (
 			<div className="text-center">

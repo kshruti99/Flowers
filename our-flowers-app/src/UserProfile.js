@@ -1,4 +1,4 @@
-import Gallery from './Gallery';
+import PostList from './PostList';
 import React, { useEffect, useState } from "react";
 import { WebcamCapture } from './Webcam';
 import {
@@ -14,29 +14,32 @@ export default function UserProfile() {
     const navigate = useNavigate();
     const currentUser = firebase.auth().currentUser
 
-    // //allGalPosts is an array of objects structured exactly like galleryObjects.json
-    // const [allGalPosts, setallGalPosts] = useState([]);
+    //allGalPosts is an array of objects structured exactly like galleryObjects.json
+    const [myPosts, setallMyPosts] = useState([]);
 
-    // useEffect(() => {
-    //     const allGalPostsRef = firebase.database().ref('galImages/')
+    useEffect(() => {
+        const allGalPostsRef = firebase.database().ref('galImages/')
 
-    //     allGalPostsRef.on('value', (snapshot) => {
-    //         const theGalObj = snapshot.val()
-    //         if (theGalObj != null) {
-    //             let galsKeyArr = Object.keys(theGalObj);
-    //             let thegalsArr = galsKeyArr.map((key) => {
-    //                 let galKeyObj = theGalObj[key]
-    //                 galKeyObj.key = key
-    //                 return galKeyObj;
-    //             })
-    //             setallGalPosts(thegalsArr);
-    //         }
-    //         else setallGalPosts([]);
-    //     })
-    //     return function cleanup() {
-    //         allGalPostsRef.off();
-    //     }
-    // })
+        allGalPostsRef.on('value', (snapshot) => {
+            const theGalObj = snapshot.val()
+            if (theGalObj != null) {
+                let galsKeyArr = Object.keys(theGalObj);
+                let thegalsArr = galsKeyArr.map((key) => {
+                    let galKeyObj = theGalObj[key]
+                    galKeyObj.key = key
+                    return galKeyObj;
+                })
+                console.log(thegalsArr);
+
+                let myGals = thegalsArr.filter(currPost => currPost.uid == currentUser.uid);
+                setallMyPosts(myGals);
+            }
+            else setallMyPosts([]);
+        })
+        return function cleanup() {
+            allGalPostsRef.off();
+        }
+    })
 
     return (
         <div>
@@ -55,9 +58,7 @@ export default function UserProfile() {
                     <Button onClick={() => { navigate('/uploadphoto'); }} size="medium" color="secondary" aria-label="upload photo button">Upload Photo</Button>
                 </div>
                 <div className="row">
-                    {/* pass in allGalPosts to data */}
-                    {/* <Gallery data={galleryObject} /> */}
-                    {/* <Gallery data={allGalPosts} /> */}
+                    <PostList data={myPosts} />
                 </div>
             </div>
         </div>
