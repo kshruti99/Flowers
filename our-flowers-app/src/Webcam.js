@@ -45,10 +45,7 @@ export const WebcamCapture = () => {
     const webcamRef = React.useRef(null);
     const currentUser = firebase.auth().currentUser;
     const [value, setValue] = useState('');
-    const handleSelect = (e) => {
-        console.log(e);
-        setValue(e)
-    }
+
 
     const capture = React.useCallback(
         () => {
@@ -75,8 +72,11 @@ export const WebcamCapture = () => {
                         console.log("durl is " + durl);
                         const dbRef = database.ref('galImages/');
                         console.log(uploadingTag);
-
-                        const newGalObj = { id: uniqueId, path: durl, imgalt: 'image ' + durl, tagid: uploadingTag }
+                        const valueArray = [];
+                        valueArray.push(value);
+                        const newGalObj = { id: uniqueId, path: durl, imgalt: 'image ' + durl, tagid: valueArray }
+                        console.log(valueArray);
+                        console.log(newGalObj);
                         dbRef.push(newGalObj);
                     });
             }
@@ -84,18 +84,10 @@ export const WebcamCapture = () => {
         setImage(null)
     };
 
-    // const handleTagChange = (e) => {
-    //     setUploadingTag(e.target.value);
-    //     console.log(uploadingTag);
-    //   };
-    // const changeHandler = e => {
-    //     console.log(uploadingTag)
-    //     setUploadingTag();
-    //   };
+
     const handleChange = (e) => {
-        console.log(e);
-        setValue(e);
-      }
+        setValue(e.target.value);
+    }
     const changeHandler = (e) => {
         // React Select return object instead of value for selection
         // return { value: selected };

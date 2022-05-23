@@ -14,29 +14,29 @@ export default function UserProfile() {
     const navigate = useNavigate();
     const currentUser = firebase.auth().currentUser
 
-    //allGalPosts is an array of objects structured exactly like galleryObjects.json
-    const [allGalPosts, setallGalPosts] = useState([]);
+    // //allGalPosts is an array of objects structured exactly like galleryObjects.json
+    // const [allGalPosts, setallGalPosts] = useState([]);
 
-    useEffect(() => {
-        const allGalPostsRef = firebase.database().ref('galImages/')
+    // useEffect(() => {
+    //     const allGalPostsRef = firebase.database().ref('galImages/')
 
-        allGalPostsRef.on('value', (snapshot) => {
-            const theGalObj = snapshot.val()
-            if (theGalObj != null) {
-                let galsKeyArr = Object.keys(theGalObj);
-                let thegalsArr = galsKeyArr.map((key) => {
-                    let galKeyObj = theGalObj[key]
-                    galKeyObj.key = key
-                    return galKeyObj;
-                })
-                setallGalPosts(thegalsArr);
-            }
-            else setallGalPosts([]);
-        })
-        return function cleanup() {
-            allGalPostsRef.off();
-        }
-    })
+    //     allGalPostsRef.on('value', (snapshot) => {
+    //         const theGalObj = snapshot.val()
+    //         if (theGalObj != null) {
+    //             let galsKeyArr = Object.keys(theGalObj);
+    //             let thegalsArr = galsKeyArr.map((key) => {
+    //                 let galKeyObj = theGalObj[key]
+    //                 galKeyObj.key = key
+    //                 return galKeyObj;
+    //             })
+    //             setallGalPosts(thegalsArr);
+    //         }
+    //         else setallGalPosts([]);
+    //     })
+    //     return function cleanup() {
+    //         allGalPostsRef.off();
+    //     }
+    // })
 
     return (
         <div>
@@ -56,7 +56,8 @@ export default function UserProfile() {
                 </div>
                 <div className="row">
                     {/* pass in allGalPosts to data */}
-                    <Gallery data={galleryObject} />
+                    {/* <Gallery data={galleryObject} /> */}
+                    {/* <Gallery data={allGalPosts} /> */}
                 </div>
             </div>
         </div>
