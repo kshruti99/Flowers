@@ -13,9 +13,9 @@ import './index.css'; //import css file!
 
 export default function Header(props) {
     return (
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="a">
             <NavbarBrand href="/">Jasmine</NavbarBrand>
-            <Nav className="mr-auto" navbar>
+            <Nav className="ms-auto" navbar>
                 <NavItem>
                     <NavLink href="/">Home</NavLink>
                 </NavItem>

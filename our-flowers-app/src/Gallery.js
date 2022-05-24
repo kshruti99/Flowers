@@ -13,8 +13,8 @@ export default function Gallery(props) {
     return (
         <div className="body-color">
             <h1 style={{ color: "#9CAEA9" }}>Gallery</h1>
-            <h4 style={{ color: "#A2D7D7" }}>Feed</h4>
-            <PostList data={props.data}/>
+            {/* <h4 style={{ color: "#A2D7D7" }}>Feed</h4> */}
+            <PostList data={props.data} />
         </div>
     );
 }

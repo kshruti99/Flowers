@@ -8,7 +8,7 @@ import "firebase/compat/database";
 import Select from 'react-select';
 import { useChecklist } from 'react-checklist';
 import { Button, ButtonGroup } from 'react-bootstrap';
-
+import './index.css';
 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -102,10 +102,11 @@ export const WebcamCapture = () => {
     };
 
     return (
-        <div className="webcam-container" /*className="video-stream"*/>
+        <div className="webcam-container">
             <div className="webcam-img">
 
                 {image == null ? <Webcam
+                    className="video-stream"
                     className="center"
                     audio={false}
                     //height={500}

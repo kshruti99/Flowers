@@ -25,7 +25,7 @@ function GalleryCard(props) {
   return (
     <div key={props.gal.galid} className="card">
       <img className="card-img-top" src={props.gal.path} alt={props.gal.imgalt} />
-      <div className="card-body">
+      <div className="card-body" className="meep">
         {props.gal.tagid.map((currTag, j) =>
           <button key={j} className="pill-version">{tagValues[currTag - 1].name}</button>
         )}

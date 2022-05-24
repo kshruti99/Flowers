@@ -17,8 +17,41 @@ body {
     right: 0;
     top: 0;
     bottom: 0;
+    width: 420;
+    height: 200;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right:0;
   }
 }
+
+.meep {
+  /* margin-bottom: 5px; 
+  top, right, bottom, left*/
+  margin: 30px 50px 30px 50px
+}
+
+/*Header styling*/
+
+.a {
+  /* height: 70px; */
+  font-weight: 550;
+  background-color: #282c34;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  color: white;
+}
+
+
+
+
 
 .pill-version { 
   background-color: #ddd;
@@ -45,9 +78,9 @@ code {
   background-color: #121212;
 }
 
-.nav-bar-color{
+/* .nav-bar-color{
   background-color: #121212;
-}
+} */
 
 /*gallery styling*/
 
