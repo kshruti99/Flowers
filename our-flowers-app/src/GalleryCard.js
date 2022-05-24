@@ -9,22 +9,31 @@ import React, { useEffect, useState } from "react";
 
 function GalleryCard(props) {
   const tagValues = [
-    { id: 1, name: 'big nose' },
-    { id: 2, name: 'bushy eyebrows' },
-    { id: 3, name: 'gapped teeth' },
-    { id: 4, name: 'heterochromia' },
-    { id: 5, name: 'hairy arms' },
-    { id: 6, name: 'heterochromia' },
-    { id: 7, name: 'chin acne' },
-    { id: 8, name: 'textured skin' },
-    { id: 9, name: 'rosacea' },
-    { id: 10, name: 'hooded eyes' },
-    { id: 11, name: 'brown skin' }
+    { value: 1, label: 'nose' },
+    { value: 2, label: 'eyebrows' },
+    { value: 3, label: 'teeth' },
+    { value: 4, label: 'heterochromia' },
+    { value: 5, label: 'arms' },
+    { value: 6, label: 'monolid' },
+    { value: 7, label: 'chin acne' },
+    { value: 8, label: 'textured skin' },
+    { value: 9, label: 'rosacea' },
+    { value: 10, label: 'hooded eyes' },
+    { value: 11, label: 'brown skin' }, 
+    { value: 12, label: 'pale skin'}, 
+    { value: 13, label: 'vitiligo'}, 
+    { value: 14, label: 'mouth'}, 
+    { value: 15, label: 'teeth'},
+    { value: 16, label: 'upper lip hair'},
+    { value: 17, label: 'natural hair'},  
+    { value: 18, label: 'straight hair'},  
+    { value: 19, label: 'mouth'}, 
+    { value: 20, label: 'cystic acne'}
   ];
   // console.log(tagValues);
   console.log(props.gal.tagid);
   console.log(props.gal.tagid.length);
-  let t = props.gal.tagid.map((currTag, j) => tagValues[currTag - 1].name);
+  let t = props.gal.tagid.map((currTag, j) => tagValues[currTag - 1].label);
   // console.log(t);
 
   return (
@@ -32,7 +41,7 @@ function GalleryCard(props) {
       <img className="card-img-top" src={props.gal.path} alt={props.gal.imgalt} />
       <div className="card-body">
         {props.gal.tagid.map((currTag, j) =>
-          <button key={j} className="pill-version">{tagValues[currTag - 1].name}</button>
+          <button key={j} className="pill-version">{tagValues[currTag - 1].label}</button>
         )}
       </div>
     </div>

@@ -16,17 +16,26 @@ import Dropdown from 'react-bootstrap/Dropdown'
 const WebcamComponent = () => <Webcam />;
 
 const data = [
-    { value: 1, label: 'big nose' },
-    { value: 2, label: 'bushy eyebrows' },
-    { value: 3, label: 'gapped teeth' },
+    { value: 1, label: 'nose' },
+    { value: 2, label: 'eyebrows' },
+    { value: 3, label: 'teeth' },
     { value: 4, label: 'heterochromia' },
-    { value: 5, label: 'hairy arms' },
-    { value: 6, label: 'heterochromia' },
+    { value: 5, label: 'arms' },
+    { value: 6, label: 'monolid' },
     { value: 7, label: 'chin acne' },
     { value: 8, label: 'textured skin' },
     { value: 9, label: 'rosacea' },
     { value: 10, label: 'hooded eyes' },
-    { value: 11, label: 'brown skin' }
+    { value: 11, label: 'brown skin' }, 
+    { value: 12, label: 'pale skin'}, 
+    { value: 13, label: 'vitiligo'}, 
+    { value: 14, label: 'mouth'}, 
+    { value: 15, label: 'teeth'},
+    { value: 16, label: 'upper lip hair'},
+    { value: 17, label: 'natural hair'},  
+    { value: 18, label: 'straight hair'},  
+    { value: 19, label: 'mouth'}, 
+    { value: 20, label: 'cystic acne'}
 ];
 
 const videoConstraints = {
