@@ -23,7 +23,8 @@ export default function Header(props) {
                     <NavLink href="/search">Search</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink>
+                    {/* <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink> */}
+                    <NavLink href="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/uploadphoto">Post</NavLink>

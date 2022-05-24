@@ -9,29 +9,22 @@ body {
 
 
 @media (max-width: 480px) {
-  .video-stream {
-    /* max-height: 400px;
-    max-width: 500px; */
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 420;
-    height: 200;
+  video {
+    width: 100% !important;
+    height: auto !important;
   }
 
-  .center {
+  /* .center {
     display: block;
     margin-left: auto;
     margin-right:0;
-  }
+  } */
 }
 
 .meep {
   /* margin-bottom: 5px; 
   top, right, bottom, left*/
-  margin: 30px 50px 30px 50px
+  margin: 30px 50px 30px 50px;
 }
 
 /*Header styling*/
