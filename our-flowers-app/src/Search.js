@@ -16,16 +16,16 @@ const tagValues = [
     { value: 8, label: 'textured skin' },
     { value: 9, label: 'rosacea' },
     { value: 10, label: 'hooded eyes' },
-    { value: 11, label: 'brown skin' }, 
-    { value: 12, label: 'pale skin'}, 
-    { value: 13, label: 'vitiligo'}, 
-    { value: 14, label: 'mouth'}, 
-    { value: 15, label: 'teeth'},
-    { value: 16, label: 'upper lip hair'},
-    { value: 17, label: 'natural hair'},  
-    { value: 18, label: 'straight hair'},  
-    { value: 19, label: 'mouth'}, 
-    { value: 20, label: 'cystic acne'}
+    { value: 11, label: 'brown skin' },
+    { value: 12, label: 'pale skin' },
+    { value: 13, label: 'vitiligo' },
+    { value: 14, label: 'mouth' },
+    { value: 15, label: 'teeth' },
+    { value: 16, label: 'upper lip hair' },
+    { value: 17, label: 'curly hair' },
+    { value: 18, label: 'straight hair' },
+    { value: 19, label: 'mouth' },
+    { value: 20, label: 'cystic acne' }
 
 ];
 
