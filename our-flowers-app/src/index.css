@@ -30,7 +30,7 @@ body {
 /*Header styling*/
 
 .a {
-  /* height: 70px; */
+  /* height: 70px;
   font-weight: 550;
   background-color: #282c34;
   min-height: 8vh;
@@ -39,12 +39,16 @@ body {
   align-items: center;
   justify-content: center;
   /* font-size: calc(10px + 2vmin); */
-  color: white;
+  /* color: white; */
+
+  /* position: relative; */
+  /* z-index: 2;
+  display: flex;
+  padding: 0 var(--gap);
+  margin: 0 0 var(--gap) 0; */
+  vertical-align: top;
+
 }
-
-
-
-
 
 .pill-version { 
   background-color: #ddd;
