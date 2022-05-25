@@ -7,6 +7,49 @@ body {
   background-color: #121212;
 }
 
+
+@media (max-width: 480px) {
+  video {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* .center {
+    display: block;
+    margin-left: auto;
+    margin-right:0;
+  } */
+}
+
+.meep {
+  /* margin-bottom: 5px; 
+  top, right, bottom, left*/
+  margin: 30px 50px 30px 50px;
+}
+
+/*Header styling*/
+
+.a {
+  /* height: 70px;
+  font-weight: 550;
+  background-color: #282c34;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* font-size: calc(10px + 2vmin); */
+  /* color: white; */
+
+  /* position: relative; */
+  /* z-index: 2;
+  display: flex;
+  padding: 0 var(--gap);
+  margin: 0 0 var(--gap) 0; */
+  vertical-align: top;
+
+}
+
 .pill-version { 
   background-color: #ddd;
   border: none;
@@ -32,9 +75,9 @@ code {
   background-color: #121212;
 }
 
-.nav-bar-color{
+/* .nav-bar-color{
   background-color: #121212;
-}
+} */
 
 /*gallery styling*/
 
@@ -326,8 +369,4 @@ img {
   #about { 
       vertical-align: middle;
   }
-  
-
-  
-
 }

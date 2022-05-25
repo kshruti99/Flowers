@@ -8,7 +8,7 @@ import "firebase/compat/database";
 import Select from 'react-select';
 import { useChecklist } from 'react-checklist';
 import { Button, ButtonGroup } from 'react-bootstrap';
-
+import './index.css';
 
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -39,8 +39,8 @@ const data = [
 ];
 
 const videoConstraints = {
-    width: 720,
-    height: 500,
+    //width: 720,
+    //    height: 500,
     facingMode: "user"
 };
 
@@ -115,12 +115,13 @@ export const WebcamCapture = () => {
             <div className="webcam-img">
 
                 {image == null ? <Webcam
+                    className="video-stream"
                     className="center"
                     audio={false}
-                    height={500}
+                    //height={500}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={720}
+                    //width={720}
                     videoConstraints={videoConstraints}
                 /> : <img className="center" src={image} />}
             </div>

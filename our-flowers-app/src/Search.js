@@ -108,11 +108,11 @@ export default function Search(props) {
         //console.log(searchField + " *");
         //console.log("running getTagID " + getTagId(searchField));
         //        const store = filteredGalObjs(getTagId(searchField));
-        console.log("this one");
-        console.log(store);
-        console.log(searchField);
-        console.log("hi");
-        console.log(filteredGalObjs('3'));
+        // console.log("this one");
+        // console.log(store);
+        // console.log(searchField);
+        // console.log("hi");
+        // console.log(filteredGalObjs('3'));
     };
 
 
@@ -126,6 +126,12 @@ export default function Search(props) {
                 // onKeyPress={(e) => handleChange(e)}
                 //input = value of onChange attribute as the handleChange function
                 //onChange sets the value of onChange with setSearchField()
+                // onKeyPress={(e) => {
+                //     if (e.key == "Enter") {
+                //         e.preventDefault();
+                //         console.log(e.target.value);
+                //     }
+                // }}
                 onChange={handleChange}
             />
 

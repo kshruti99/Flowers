@@ -13,9 +13,9 @@ import './index.css'; //import css file!
 
 export default function Header(props) {
     return (
-        <Navbar color="light" light expand="md">
+        <Navbar color="light" light expand="md" className="a">
             <NavbarBrand href="/">Jasmine</NavbarBrand>
-            <Nav className="mr-auto" navbar>
+            <Nav className="ms-auto" navbar>
                 <NavItem>
                     <NavLink href="/">Home</NavLink>
                 </NavItem>
@@ -23,7 +23,8 @@ export default function Header(props) {
                     <NavLink href="/search">Search</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink>
+                    {/* <NavLink href="https://k4vya.github.io/jasmine-landing/">About</NavLink> */}
+                    <NavLink href="/about">About</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href="/uploadphoto">Post</NavLink>
